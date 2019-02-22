@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NPS
 {
@@ -48,12 +46,15 @@ namespace NPS
         // Intervalo de confiança e margem de erro com base no nível de confiança
         public static string IntervaloConfianca(int d, int n, int p)
         {
+            // Intervalo para 90% confiança
             double _90inf = NPS(d, n, p) - 1.64 * MoeNPS(d, n, p);
             double _90sup = NPS(d, n, p) + 1.64 * MoeNPS(d, n, p);
 
+            // Intervalo para 95% confiança
             double _95inf = NPS(d, n, p) - 1.96 * MoeNPS(d, n, p);
             double _95sup = NPS(d, n, p) + 1.96 * MoeNPS(d, n, p);
 
+            // Intervalo para 99% confiança
             double _99inf = NPS(d, n, p) - 2.57 * MoeNPS(d, n, p);
             double _99sup = NPS(d, n, p) + 2.57 * MoeNPS(d, n, p);
 
